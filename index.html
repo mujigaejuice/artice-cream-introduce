@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f7e2e7" />
+    <meta name="description" content="개발·AI 글을 읽기 수준에 맞게 읽고, 퀴즈를 풀고, 아이스크림 스쿱으로 기록하는 artice cream. 프로젝트의 진행상황, 실제 화면과 남은일을 소개합니다." />
+    <title>artice cream — 프로젝트 소개</title>
+    <link rel="icon" type="image/svg+xml" href="./assets/app-icon.svg" />
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">본문으로 건너뛰기</a>
+
+    <header class="header page-width">
+      <a class="wordmark" href="#overview" aria-label="artice cream 프로젝트 소개">artice cream<span aria-hidden="true">.</span></a>
+      <nav aria-label="프로젝트 메뉴">
+        <ul class="nav-menu">
+          <li><a href="#overview" data-section="overview" aria-current="page">소개</a></li>
+          <li><a href="#progress" data-section="progress">진행상황</a></li>
+          <li><a href="#screens" data-section="screens">화면 체크</a></li>
+          <li><a href="#roadmap" data-section="roadmap">남은일</a></li>
+          <li><a class="app-link" href="https://artice-cream.vercel.app/">앱 열기</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="container page-width" id="main-content" tabindex="-1">
+      <aside class="profile" aria-labelledby="project-name">
+        <figure class="project-icon">
+          <img src="./assets/app-icon.svg" width="256" height="256" alt="체리를 얹은 분홍색·노란색 2단 아이스크림 와플 콘, artice cream 예비 앱 아이콘" />
+          <figcaption>예비 앱 아이콘</figcaption>
+        </figure>
+        <h1 id="project-name">artice cream</h1>
+        <p class="name-note">article + ice cream</p>
+        <p class="profile-description">매일 읽는 개발·AI 글이<br />차곡차곡 쌓이는 읽기 앱</p>
+        <ul class="project-state" aria-label="프로젝트 상태">
+          <li><span class="state-dot" aria-hidden="true"></span>웹 베타</li>
+          <li>Android 출시 준비 중</li>
+        </ul>
+        <a class="button button-primary" href="https://artice-cream.vercel.app/">앱 열기</a>
+        <p class="profile-footnote">한 편의 읽기가, 한 스쿱의 기록으로.</p>
+      </aside>
+
+      <div class="content">
+        <section class="panel" id="overview" aria-label="프로젝트 소개" tabindex="-1" data-panel>
+          <p class="overview-description">artice cream은 개발·AI 글을 수집하고, 읽기 수준에 맞는 본문과 용어 풀이·퀴즈를 제공하는 앱입니다. 읽기를 마친 글은 아이스크림 스쿱으로 저장합니다.</p>
+          <ol class="reading-flow" aria-label="앱 이용 순서">
+            <li><span class="step-number" aria-hidden="true">1</span><h2>읽기</h2><p>오늘 탭에서 글을 고르고 <br />본문 속 용어 뜻 펼쳐 보기</p></li>
+            <li><span class="step-number" aria-hidden="true">2</span><h2>퀴즈</h2><p>4문항을 풀고 채점 결과로 <br />다음 읽기 수준 조정</p></li>
+            <li><span class="step-number" aria-hidden="true">3</span><h2>저장</h2><p>완료한 글을 저장하고 <br />콘에 쌓인 스쿱 확인</p></li>
+          </ol>
+
+          <div class="flavors">
+            <h2>다루는 분야</h2>
+            <p>발행처 피드 40곳의 글을 CS·AI 8개 분야로 분류합니다.</p>
+            <ul class="flavor-list" aria-label="여덟 가지 읽기 분야">
+              <li class="flavor-cloud">클라우드</li><li class="flavor-infra">인프라</li>
+              <li class="flavor-data">데이터</li><li class="flavor-cs">CS 기초</li>
+              <li class="flavor-dl">딥러닝</li><li class="flavor-llm">LLM</li>
+              <li class="flavor-ai-security">AI 보안</li><li class="flavor-security">보안</li>
+            </ul>
+          </div>
+
+          <div class="detail-block">
+            <h2>수준에 맞추는 방식</h2>
+            <p>글마다 3개 수준의 본문을 만들고, 용어 풀이와 퀴즈를 붙입니다. 요약과 중요한 문단을 강조하고, 최근 3회 퀴즈 점수의 평균으로 읽기 수준을 조정합니다.</p>
+          </div>
+          <div class="detail-block">
+            <h2>읽기 횟수와 복습</h2>
+            <p>하루 무료 1편과 광고를 통한 최대 3편 추가 열람을 구현했습니다. 횟수는 한국 시간 자정에 초기화되며, 한 번 연 글은 다시 읽어도 차감하지 않습니다. 퀴즈를 다시 풀면 복습으로 처리합니다.</p>
+            <p class="inline-note">광고는 아직 테스트용입니다. 실제 리워드 광고 연결은 출시 전 작업으로 남아 있습니다.</p>
+          </div>
+          <div class="tech-note"><h2>구성</h2><p>웹·API는 Next.js와 Vercel, 데이터·인증은 Supabase, 글 가공은 OpenAI 호환 LLM 게이트웨이를 사용합니다. 안드로이드 앱은 정적 내보내기와 Capacitor로 구성했습니다.</p></div>
+          <a class="text-link" href="#progress" data-section="progress">진행상황 보기 <span aria-hidden="true">→</span></a>
+        </section>
+
+        <section class="panel" id="progress" aria-label="진행상황" tabindex="-1" data-panel>
+          <h2>운영 현황</h2>
+          <p class="source-note">아래 수치는 <time datetime="2026-10-04">2026.10.04</time> 아침(KST) 점검 기록입니다.</p>
+          <dl class="snapshot">
+            <div><dt>가공 완료</dt><dd><strong>42편</strong><span>분야별 4~7편</span></dd></div>
+            <div><dt>가공 대기</dt><dd><strong>592건</strong><span>대기 자료 보관 기한 10일</span></dd></div>
+            <div><dt>예약 작업</dt><dd><strong>9개</strong><span>수집 1개 + 분야별 가공 8개</span></dd></div>
+            <div><dt>계정</dt><dd><strong>22개</strong><span>익명 20개 · 정식 2개</span></dd></div>
+          </dl>
+          <p class="inline-note">분야당 하루 1편씩 가공하고 있습니다. 대기 자료 대부분이 가공 차례 전에 만료되어 처리량 확대가 필요합니다.</p>
+
+          <h2 class="content-title">끝낸 작업</h2>
+          <ul class="status-list">
+            <li><span class="status-badge">구현</span><div><h3>수집과 가공을 나눈 파이프라인</h3><p>피드 수집·분류 후 대기열에 넣고, 분야별 작업이 본문을 추출해 3개 수준으로 가공합니다. 본문 길이 검증, 재요청 1회, 용어 수 제한, 첫 출현 표시, 중요 문단 강조와 용어 자동 집계까지 반영했습니다.</p></div></li>
+            <li><span class="status-badge">구현</span><div><h3>읽기부터 퀴즈·저장까지</h3><p>오늘 탭에서 리더, 퀴즈, 서버 채점, 수준 조정, 콘 저장으로 이어집니다. 용어 뜻을 행간에 펼쳐 보고 원문 링크로 이동할 수 있으며, 저장하면 새 스쿱이 떨어집니다.</p></div></li>
+            <li><span class="status-badge">구현</span><div><h3>데이터 접근과 인증</h3><p>Supabase 서울 리전에 데이터베이스와 접근 정책을 구성했습니다. 원문 전체와 퀴즈 정답은 클라이언트에 노출하지 않습니다. 구글 OAuth와 이메일 매직링크, PKCE와 토큰 기반 API 인증을 구현했습니다.</p></div></li>
+            <li><span class="status-badge">확인</span><div><h3>읽기 한도와 테스트 광고 보상</h3><p>서버에서 무료·추가 열람 한도와 자정 초기화를 적용합니다. 광고 보상은 테스트용으로 연결했고, 관련 버그 3건을 수정한 뒤 9월 27일 웹에서 추가 열람까지 확인했습니다.</p></div></li>
+            <li><span class="status-badge">확인</span><div><h3>안드로이드 핵심 흐름</h3><p>Capacitor, 앱용 정적 빌드, 로그인 딥링크, 세션 저장을 구성했습니다. 9월 27일 에뮬레이터에서 읽기 → 퀴즈 → 저장을 확인했으며, Play 제출은 아직입니다.</p></div></li>
+            <li><span class="status-badge">운영</span><div><h3>웹 배포와 예약 작업</h3><p>GitHub 공개 저장소의 main 브랜치를 Vercel에 연결했습니다. 9월 29일부터 9개 예약 작업이 실행된 것을 데이터베이스 기록으로 확인했습니다.</p></div></li>
+          </ul>
+
+          <div class="detail-block">
+            <h2>만드는 과정에서 달라진 점</h2>
+            <ul class="change-list">
+              <li><strong>경제·정치·IT 뉴스 → CS·AI 8분야</strong><p>구글뉴스 RSS 대신 발행처 피드 40곳을 직접 수집하는 방향으로 바꿨습니다.</p></li>
+              <li><strong>한 번에 처리 → 수집·분야별 가공 분리</strong><p>실행 시간 제한에 맞춰 예약 작업을 9개로 나눴습니다.</p></li>
+              <li><strong>웹 PWA → 안드로이드 앱</strong><p>리워드 광고 보상을 서버에서 검증하는 흐름에 맞춰 Capacitor와 정적 내보내기를 채택했습니다.</p></li>
+              <li><strong>게스트 우선 → 처음부터 로그인</strong><p>기존 계정으로 들어가기 어렵고 게스트 기록을 합칠 수 없던 문제를 해결하는 방향으로 전환했습니다. 기존 익명 기록은 이전하지 않습니다.</p></li>
+              <li><strong>SDK 직접 호출 → 호환 게이트웨이</strong><p>현재 게이트웨이에는 프롬프트 캐싱·Batch API가 없고 비용 추정값이 0이어서, 실측 비용 검토는 보류 중입니다.</p></li>
+            </ul>
+          </div>
+          <a class="text-link" href="#roadmap" data-section="roadmap">남은일 보기 <span aria-hidden="true">→</span></a>
+        </section>
+
+        <section class="panel" id="screens" aria-label="화면 체크" tabindex="-1" data-panel>
+          <p class="overview-description">글을 고르고, 읽고, 퀴즈를 풀고, 콘에 저장하기까지. 다섯 장의 화면으로 앱의 이용 흐름을 살펴볼 수 있습니다.</p>
+          <p class="source-note">사진을 누르면 새 탭에서 원본 크기로 볼 수 있습니다.</p>
+
+          <ol class="screen-gallery" aria-label="앱 이용 순서별 화면">
+            <li>
+              <figure class="screen-item">
+                <a class="screen-image" href="./assets/목록.jpg" target="_blank" rel="noopener" aria-label="오늘의 아티클 화면 크게 보기 (새 탭)">
+                  <img src="./assets/목록.jpg" width="502" height="861" loading="lazy" decoding="async" alt="분야, 읽기 수준, 예상 시간과 요약이 표시된 오늘의 아티클 목록" />
+                  <span class="image-hint" aria-hidden="true">크게 보기</span>
+                </a>
+                <figcaption class="screen-caption">
+                  <span class="step-number" aria-hidden="true">1</span>
+                  <h2>오늘의 아티클</h2>
+                  <p>분야와 읽기 수준, 예상 시간을 확인하고 읽을 글을 고릅니다. 카드에는 제목과 짧은 요약, 출처가 함께 표시됩니다.</p>
+                  <p>캡처는 오늘의 무료 분량을 모두 읽은 상태로, 추가 읽기 안내와 내 콘으로 가는 링크가 보입니다.</p>
+                  <p class="inline-note">게스트 안내는 로그인 우선 전환 전 화면입니다. 광고 연결은 아직 테스트용입니다.</p>
+                </figcaption>
+              </figure>
+            </li>
+            <li>
+              <figure class="screen-item">
+                <a class="screen-image" href="./assets/기사원문.jpg" target="_blank" rel="noopener" aria-label="아티클 읽기 화면 크게 보기 (새 탭)">
+                  <img src="./assets/기사원문.jpg" width="498" height="906" loading="lazy" decoding="async" alt="구글 AI 보안 글의 본문에 용어 하이라이트와 중요 문단 표시가 적용된 리더" />
+                  <span class="image-hint" aria-hidden="true">크게 보기</span>
+                </a>
+                <figcaption class="screen-caption">
+                  <span class="step-number" aria-hidden="true">2</span>
+                  <h2>수준에 맞춘 본문 읽기</h2>
+                  <p>선택한 글을 읽기 수준에 맞게 가공한 본문으로 읽습니다. 상단에는 분야·수준·예상 시간이, 본문에는 용어와 중요한 문단이 강조되어 있습니다.</p>
+                  <p>강조된 용어를 누르면 뜻을 확인할 수 있고, 오른쪽 위의 ‘원문 읽기’로 발행처의 글을 열 수 있습니다.</p>
+                </figcaption>
+              </figure>
+            </li>
+            <li>
+              <figure class="screen-item">
+                <a class="screen-image" href="./assets/퀴즈.jpg" target="_blank" rel="noopener" aria-label="이해도 퀴즈 화면 크게 보기 (새 탭)">
+                  <img src="./assets/퀴즈.jpg" width="508" height="966" loading="lazy" decoding="async" alt="네 문항 중 두 번째 문제에서 답 하나를 선택한 이해도 퀴즈 화면" />
+                  <span class="image-hint" aria-hidden="true">크게 보기</span>
+                </a>
+                <figcaption class="screen-caption">
+                  <span class="step-number" aria-hidden="true">3</span>
+                  <h2>네 문항으로 이해도 확인</h2>
+                  <p>읽은 본문을 바탕으로 만든 객관식 퀴즈를 풉니다. 상단의 진행 막대와 문항 번호로 어디까지 풀었는지 확인합니다.</p>
+                  <p>선택한 답은 진한 색으로 표시됩니다. 이전·다음 버튼으로 문항을 이동하거나 ‘다시 읽기’로 본문을 확인할 수 있습니다.</p>
+                </figcaption>
+              </figure>
+            </li>
+            <li>
+              <figure class="screen-item">
+                <a class="screen-image" href="./assets/퀴즈%20결과.jpg" target="_blank" rel="noopener" aria-label="퀴즈 결과 화면 크게 보기 (새 탭)">
+                  <img src="./assets/퀴즈%20결과.jpg" width="391" height="817" loading="lazy" decoding="async" alt="25점과 정답 한 개, 문항별 선택한 답·정답·해설, 콘에 올리기 버튼이 있는 결과 화면" />
+                  <span class="image-hint" aria-hidden="true">크게 보기</span>
+                </a>
+                <figcaption class="screen-caption">
+                  <span class="step-number" aria-hidden="true">4</span>
+                  <h2>결과와 해설로 복습</h2>
+                  <p>점수와 정답 수를 확인하고, 문항별로 내가 고른 답·정답·해설을 비교합니다. 캡처는 네 문제 중 한 문제를 맞힌 결과입니다.</p>
+                  <p>최근 세 번의 평균 점수와 다음 수준 안내도 함께 표시됩니다. 복습을 마치면 ‘콘에 올리기’로 읽기 기록을 저장합니다.</p>
+                </figcaption>
+              </figure>
+            </li>
+            <li>
+              <figure class="screen-item">
+                <a class="screen-image" href="./assets/콘화면.jpg" target="_blank" rel="noopener" aria-label="내 콘 화면 크게 보기 (새 탭)">
+                  <img src="./assets/콘화면.jpg" width="762" height="895" loading="lazy" decoding="async" alt="내 콘에 민트색과 하늘색 스쿱 두 개가 쌓여 있는 읽기 기록 화면" />
+                  <span class="image-hint" aria-hidden="true">크게 보기</span>
+                </a>
+                <figcaption class="screen-caption">
+                  <span class="step-number" aria-hidden="true">5</span>
+                  <h2>읽은 만큼 쌓이는 내 콘</h2>
+                  <p>저장한 글 한 편이 스쿱 하나가 되어 콘에 쌓입니다. 분야에 따라 다른 색을 사용해 읽기 기록을 눈으로 확인할 수 있습니다.</p>
+                  <p>캡처에는 두 개의 스쿱이 쌓여 있으며, 오른쪽 위에 전체 스쿱 수가 표시됩니다.</p>
+                </figcaption>
+              </figure>
+            </li>
+          </ol>
+          <a class="text-link" href="#roadmap" data-section="roadmap">남은일 보기 <span aria-hidden="true">→</span></a>
+        </section>
+
+        <section class="panel" id="roadmap" aria-label="남은일" tabindex="-1" data-panel>
+          <div class="roadmap-groups">
+            <section class="roadmap-group" aria-labelledby="operations-title">
+              <div class="group-heading"><h2 id="operations-title">배포·운영</h2><span class="priority">지금 바로</span></div>
+              <ul class="todo-list">
+                <li>로그인 우선 전환의 배포 반영 확인. 점검 당시에는 익명 로그인 중단으로 새 방문자의 온보딩이 막힌 상태</li>
+                <li>배포 후 구글 로그인·이메일 링크를 웹과 앱에서 각각 끝까지 확인</li>
+                <li>Vercel 사이트 URL과 Supabase의 사이트·로그인 복귀 URL 설정 점검</li>
+                <li>가공량을 분야당 하루 2편으로 늘리고, 다음 날 처리 중단 사유와 실행 시간 확인</li>
+                <li>클라우드·인프라·데이터 분야에서 가공 결과가 없었던 날의 추출 실패·재시도·대기열 확인</li>
+                <li>기존 익명 계정 20개의 정리 여부 결정, 사용하지 않는 수동 계정 연결 설정 해제 검토</li>
+              </ul>
+              <p class="inline-note">점검 문서에는 로그인 전환이 ‘커밋 전’으로 남아 있지만 로컬 커밋에는 반영되어 있습니다. 배포 완료 여부와 로그인 검증은 별도 확인이 필요합니다.</p>
+            </section>
+            <section class="roadmap-group" aria-labelledby="release-title">
+              <div class="group-heading"><h2 id="release-title">앱 출시</h2><span class="priority">출시 전</span></div>
+              <ul class="todo-list">
+                <li>AdMob 계정·광고 단위·앱 플러그인·서버 보상 검증을 연결하고 테스트 광고로 일일 상한까지 확인</li>
+                <li>FCM 푸시 구독과 수집 후 발송 작업 구현, 알림 권한을 거부해도 사용할 수 있는 흐름 점검</li>
+                <li>앱에 API 주소를 넣기 전에 커스텀 도메인 결정</li>
+                <li>Play 개발자 계정, 서명 키, 대상 SDK, 광고 ID 권한 준비</li>
+                <li>개인정보처리방침 URL, 데이터 보안 양식, 스토어 스크린샷·설명 작성</li>
+                <li>스토어 제출 전 콘텐츠 저작권 검토 완료</li>
+                <li>광고 운영 시 Vercel Pro 전환 검토와 실행 시간 설정 조정</li>
+              </ul>
+            </section>
+            <section class="roadmap-group" aria-labelledby="quality-title">
+              <div class="group-heading"><h2 id="quality-title">품질 점검</h2><span class="priority">베타 준비</span></div>
+              <ul class="todo-list">
+                <li>앱의 반응형 화면, 키보드 포커스, 모션 감소 설정, 빈 화면·오류 안내 점검</li>
+                <li>콘의 스쿱을 보조기술로 탐색할 수 있는 버튼 목록 구조 반영</li>
+                <li>파이프라인 실행 내역·추출 성공률·오류를 한곳에서 확인할 도구 마련</li>
+                <li>ESLint 9 설정 추가와 베타 사용자 초대</li>
+              </ul>
+            </section>
+            <section class="roadmap-group" aria-labelledby="expansion-title">
+              <div class="group-heading"><h2 id="expansion-title">계정·확장</h2><span class="priority">그다음</span></div>
+              <ul class="todo-list">
+                <li>나 탭에 계정 화면과 로그아웃·계정 전환 기능 추가</li>
+                <li>이미 생성한 용어 풀이를 활용하는 단어장 탭 구현</li>
+                <li>크레딧 적립 → 테마 → 상점 → 연속 읽기·북마크 순서로 확장</li>
+              </ul>
+            </section>
+          </div>
+
+          <details class="decision-note">
+            <summary>아직 결정하지 않은 것과 문서 정리</summary>
+            <ul class="todo-list">
+              <li>웹 공개 유지, 오프라인 지원, iOS 출시 시점</li>
+              <li>콘의 정렬 방향, 탭 배지, 스쿱 선택 시 콘 이동 방식</li>
+              <li>유료 API 전환 시 비용 검증 재개, MVP 이후 Elo·IRT 수준 모델 검토</li>
+              <li>익명 로그인·게스트 기록·UTC 초기화·이전 경로 등 현재 구현과 어긋난 기획 문서 갱신</li>
+            </ul>
+          </details>
+          <p class="source-note roadmap-source"><time datetime="2026-10-04">2026.10.04</time> 점검 기록 기반. 출시 일정은 아직 정하지 않았습니다.</p>
+          <div class="closing-note"><p>구현 내용은 저장소에서 확인할 수 있습니다.</p><a class="button button-primary" href="https://github.com/mujigaejuice/artice-cream">GitHub 저장소 보기</a></div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="footer page-width"><p>artice cream</p><p>check.md · 2026.10.04 점검 기록 기준</p></footer>
+  </body>
+</html>

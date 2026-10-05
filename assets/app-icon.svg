@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+  <title id="title">2단 아이스크림, artice cream</title>
+  <desc id="desc">체리를 얹은 분홍색 스쿱과 노란색 스쿱이 물결 모양 가장자리와 와플 무늬 콘 위에 쌓여 있습니다.</desc>
+  <defs>
+    <clipPath id="cone"><path d="M83 153h90l-38 78q-7 13-14 0Z" /></clipPath>
+  </defs>
+  <rect width="256" height="256" rx="52" fill="#fff7f0" />
+  <ellipse cx="128" cy="237" rx="32" ry="5" fill="#ebd9c7" />
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <path d="M83 153h90l-38 78q-7 13-14 0Z" fill="#edc58c" stroke="#a98150" stroke-width="4" />
+    <g clip-path="url(#cone)" fill="none">
+      <path d="m88 160 38 76" stroke="#ffe1ac" stroke-width="7" />
+      <g stroke="#c79b64" stroke-width="3">
+        <path d="m67 160 89 89m-70-103 89 89m-70-103 89 89m-120-40 60 60" />
+        <path d="m189 160-89 89m70-103-89 89m70-103-89 89m120-40-60 60" />
+      </g>
+    </g>
+    <path d="M68 132c0-33 26-58 59-58s61 25 61 58c12 2 18 11 15 21-2 10-11 15-21 12-3 16-23 21-34 9-10 15-31 16-42 1-11 13-32 9-36-7-12 2-22-6-22-16 0-10 8-18 20-20Z" fill="#f6db83" stroke="#b7994e" stroke-width="4" />
+    <path d="M76 127c3-15 10-24 20-30" fill="none" stroke="#fff0b9" stroke-width="8" />
+    <ellipse cx="64" cy="148" rx="5" ry="8" transform="rotate(35 64 148)" fill="#fff0b9" />
+    <ellipse cx="118" cy="167" rx="4" ry="6" transform="rotate(20 118 167)" fill="#fff0b9" />
+    <path d="M157 153q7 6 14 0m-80 0 5 3" fill="none" stroke="#e0bd62" stroke-width="3" />
+    <path d="M78 87c0-29 21-51 49-51s51 22 51 51c10 1 17 9 16 18-1 9-9 15-19 13-4 14-20 18-31 7-9 13-27 14-38 2-12 12-29 6-32-7-10 1-18-5-19-14-1-9 8-18 23-19Z" fill="#f3adc3" stroke="#ac6980" stroke-width="4" />
+    <ellipse cx="103" cy="63" rx="7" ry="15" transform="rotate(38 103 63)" fill="#ffdae7" />
+    <ellipse cx="70" cy="104" rx="5" ry="7" transform="rotate(35 70 104)" fill="#ffdae7" />
+    <ellipse cx="116" cy="119" rx="4" ry="6" transform="rotate(20 116 119)" fill="#ffdae7" />
+    <path d="m157 87 5 5m-71 17 5 3" fill="none" stroke="#dc8fa8" stroke-width="3" />
+    <circle cx="137" cy="35" r="14" fill="#f3687d" stroke="#b6455c" stroke-width="3.5" />
+    <path d="M139 26c2-11 8-17 14-20" fill="none" stroke="#80574e" stroke-width="4" />
+    <ellipse cx="132" cy="30" rx="3.5" ry="4.5" transform="rotate(25 132 30)" fill="#ffb3c0" />
+  </g>
+</svg>
